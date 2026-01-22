@@ -1,6 +1,7 @@
 Yahoo!オークション 新着商品監視ツール
 
 1. 概要
+   
 このツールは、Yahoo!オークションの検索結果を定期的に取得し、新着商品を検知して Discord に自動通知する監視システムです。
 
 Playwright を用いた安定したスクレイピング、  
@@ -32,19 +33,29 @@ Yahoo!側の負荷やアクセス制限を考慮した監視間隔:90秒で動�
 
 3.ディレクトリ構成
 yahoo-auction-monitor/
-├── fetcher.py      # Playwright を使った商品取得 ├── notifier.py     # Discord 通知処理
+
+├── fetcher.py      # Playwright を使った商品取得 
+
+├── notifier.py     # Discord 通知処理
+
 ├── monitor.py      # 監視ループ
+
 ├── requirements.txt    # 依存パッケージ
+
 └── README.md
 
 4.使い方
+
 <1> リポジトリを clone
+
 <2> 依存パッケージをインストール
     pip install -r requirements.txt
     playwright install
+    
 <3> Discord Webhook URL を設定
     `monitor.py` の以下の部分を書き換えます。
     WEBHOOK_URL = "あなたのWebhook URL"
+    
 <4> 実行
     起動後、以下を入力します。
     - min price
